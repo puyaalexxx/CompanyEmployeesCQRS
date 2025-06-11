@@ -1,0 +1,7 @@
+[14:28:07 INFORMATION] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+[14:28:07 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployeesCQRS\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:28:07 INFORMATION] Now listening on: https://localhost:5001
+[14:28:07 INFORMATION] Now listening on: http://localhost:5000
+[14:28:07 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:28:07 INFORMATION] Hosting environment: Development
+[14:28:07 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployeesCQRS\CompanyEmployees

@@ -16,7 +16,7 @@ public class GlobalExceptionHandler : IExceptionHandler
         _problemDetailsService = problemDetailsService;
     }
 
-    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, 
+    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception,
         CancellationToken cancellationToken)
     {
         httpContext.Response.ContentType = "application/json";
@@ -25,10 +25,19 @@ public class GlobalExceptionHandler : IExceptionHandler
         {
             NotFoundException => StatusCodes.Status404NotFound,
             BadRequestException => StatusCodes.Status400BadRequest,
+            ValidationAppException => StatusCodes.Status422UnprocessableEntity,
             _ => StatusCodes.Status500InternalServerError
         };
 
         _logger.LogError($"Something went wrong: {exception.Message}");
+
+        //for fluent validations
+        if (exception is ValidationAppException)
+        {
+            await httpContext.Response.WriteAsJsonAsync((exception as ValidationAppException)?.Errors);
+
+            return true;
+        }
 
         var result = await _problemDetailsService.TryWriteAsync(new ProblemDetailsContext
         {

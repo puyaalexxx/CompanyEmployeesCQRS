@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CompanyEmployees.Application\CompanyEmployees.Application.csproj" />
     <ProjectReference Include="..\CompanyEmployees.Infrastructure.Persistence\CompanyEmployees.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\CompanyEmployees.Infrastructure.Presentation\CompanyEmployees.Infrastructure.Presentation.csproj" />
     <ProjectReference Include="..\LoggingService\LoggingService.csproj" />
